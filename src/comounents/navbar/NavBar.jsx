@@ -15,15 +15,20 @@ import { IoGitCompareOutline } from "react-icons/io5";
 import Button from '@mui/material/Button';
 import { TbReorder } from "react-icons/tb";
 import axios from 'axios';
+import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+import NavSection from '../navSection/NavSection';
 
 
 const NavBar = () => {
 const [categories, setCategories] = useState(['Milks & Diaries','Clothing and Beatuy','Fast Food','Pet Foods','Vegetables','Baking and Maerials','Fresh Fruits','Bread And juice','Wines & Drinks','Honey','Groceries','Kids Items'
   
 ])
-const [isDropWownOpen, setIsDropWownOpen] = useState(false)
+const [isDropWownOpen, setIsDropDownOpen] = useState(false)
 
 const countriesData = [];
+const handleClickAway = () => {
+  setIsDropDownOpen(false);
+};
 
 useEffect(() => {
   getCountry('https://countriesnow.space/api/v0.1/countries')
@@ -47,7 +52,7 @@ const getCountry = async(url)=>{
   }
 }
   return (
-    <div>
+  <>
       <header>
         <div className=" container-fluid">
           <div className="row navRow">
@@ -62,7 +67,8 @@ const getCountry = async(url)=>{
                 data= {categories}
                 />
              
-          
+             
+             
               <div className="inputBar">
                 <input type="text" placeholder='search your products'/>
                 <CiSearch />
@@ -75,7 +81,10 @@ const getCountry = async(url)=>{
             <CiLocationOn />
            <DropDown  placeholder={"Your Location"} data = {countriesData}/>
             </div>
+           
             <div className="navLast list list-inline mb-0 ">
+         
+         
               <ul className='d-flex gap-4'>
               
                 <li  className="compare inline-list-item
@@ -87,22 +96,34 @@ const getCountry = async(url)=>{
                 <li  className="wishList">
                   <span><FaRegHeart  className='navIcon'/> Wishlist  <span className='badge bg-success rounded-circle'>3</span></span></li>
                 <li  className="cart"><span><MdOutlineShoppingCart  className='navIcon'/> Cart   <span className='badge bg-success rounded-circle'>2</span></span></li>
+              
                 <li  className="account">
-                  <span onClick={()=>{setIsDropWownOpen(!isDropWownOpen)}}> <VscAccount  className='navIcon' /> 
+                  <span onClick={()=>{setIsDropDownOpen(!isDropWownOpen)}}> <VscAccount  className='navIcon' /> 
                   Account  </span>
                    </li>
-              </ul>
+            
+              
+             
          {
           isDropWownOpen && (
+            <ClickAwayListener onClickAway={handleClickAway}>
                 <ul className='dropDownAccount'>
-                  <li> <MdOutlineAccountCircle /> <Button>Account</Button> </li>
-                  <li><TbReorder /><Button> Claim Order</Button></li>
-                  <li><RiCustomerService2Fill /><Button>Services</Button></li>
-                  <li><VscSignIn /><Button>Sign Up</Button></li>
-                  <li><MdLogout /><Button>Log Out</Button></li>
+                  <li>  <Button><MdOutlineAccountCircle />Account</Button> </li>
+                  <li><Button><TbReorder /> Claim Order</Button></li>
+                  <li><Button><RiCustomerService2Fill /> Services</Button></li>
+                  <li><Button> <VscSignIn /> Sign Up</Button></li>
+                  <li><Button><MdLogout />Log Out</Button></li>
+              
+              
                 </ul>
-                          )
-         }     
+                </ClickAwayListener>
+                    )
+                  }
+                  </ul>
+ 
+   
+ 
+
 
 
 
@@ -111,11 +132,13 @@ const getCountry = async(url)=>{
 
 
               </div>
+         
           </div>
           </div>
         </div>
       </header>
-    </div>
+      <NavSection/>
+      </>
   )
 }
 

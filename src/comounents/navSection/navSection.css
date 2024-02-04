@@ -1,0 +1,60 @@
+.navsection{
+    height: 80px;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0 0 
+    0 / 20%) ;
+}
+.navsection-row{
+    width: 100%;
+}
+.part-1 Button{
+  
+    background-color: #3bb77e;
+    color: #FFF;
+    padding: 8px 15px;
+    transition: all .3s ease;
+    box-shadow: 0 3px 6px rgba(0 0 0 / 20%) ;
+    font-size: 17px;
+   
+}
+.part-1 Button:hover{
+    background-color: #0f5333;
+
+
+}
+.part-2 ul li Button{
+   padding: 22px 15px;
+   color:#3bb77e !important;
+    text-transform: uppercase;
+
+    
+}
+.part-2 ul li Button a{
+    color: rgba(0,0,0,.7) !important;
+    text-decoration: none !important;
+    font-size: 17px;
+    font-weight: 550;
+}
+.part-3 .phnNum{
+    gap: 15px;
+   
+}
+.part-3 .phnNum span{
+    font-size: 30px;
+    color: rgba(0,0,0,.7)
+}
+.part-3 .phnNum .text{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center !important;
+    
+}
+.part-3 .phnNum .text h4{
+    color: #3bb77e;
+}
