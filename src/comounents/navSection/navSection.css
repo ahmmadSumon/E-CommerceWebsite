@@ -8,6 +8,7 @@
     align-items: center;
     box-shadow: 0 3px 6px rgba(0 0 
     0 / 20%) ;
+    margin-bottom: 100px
 }
 .navsection-row{
     width: 100%;
@@ -42,6 +43,9 @@
 }
 .part-3 .phnNum{
     gap: 15px;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
    
 }
 .part-3 .phnNum span{
@@ -57,4 +61,45 @@
 }
 .part-3 .phnNum .text h4{
     color: #3bb77e;
+}
+
+.dropdown_menu {
+    position: absolute;
+    list-style: none;
+    width: 180px;
+    height:max-content;
+    background: #fff;
+    box-shadow: 0 3px 6px #00000033 ;
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+/*      */
+
+}
+.dropdown_menu ul{
+list-style: none;
+padding-left: 0;
+
+}
+.dropdown_menu ul li Button{
+    padding: 5px 10px;
+ 
+}
+.dropdown_menu ul li Button Link{
+    font-size: 10px;
+}
+.list-inline-item:hover .dropdown_menu {
+    opacity: 1;
+    visibility: inherit;
+}
+.list-inline-item.home:hover .dropdown_menu {
+    opacity: 1;
+    visibility: inherit;
+}
+.mega_menu{
+   height: 300px;
+  width: 100% !important;
+   
+   
 }

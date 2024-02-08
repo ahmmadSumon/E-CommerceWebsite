@@ -4,8 +4,13 @@ import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider,Route, Routes,createRoutesFromElements
 } from "react-router-dom";
+<About/>
+
+import Home from './Pages/home/Home.jsx'
+import Blog from './blog/Blog.jsx';
+import About from './Pages/about/About.jsx';
 
 
 // bootstrap css
@@ -17,21 +22,17 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 
-import Home from './home/Home.jsx'
-import Blog from './blog/Blog.jsx';
 
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-    children:[
-      {path:"/", element: <Home/>},
-      {path:"/blog", element:<Blog/>}
-    ]
-  },
-]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App/>}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About/>} />
+    </Route>
+  )
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
