@@ -16,6 +16,7 @@ import About from './Pages/about/About.jsx';
 // bootstrap css
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import Shop from './components/shop/Shop.jsx';
 
 
 
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App/>}>
       <Route index element={<Home />} />
       <Route path="about" element={<About/>} />
+      <Route  path="shop" element={<Shop/>}/>
     </Route>
   )
 )

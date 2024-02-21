@@ -1,0 +1,40 @@
+
+.catSlider{
+height: 300px;
+}
+.sliderCatMain {
+    position: relative;
+}
+.sliderCatMain .item{
+    height: auto;
+    width: auto;
+    padding: 15px !important;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0 0 0 / 20%) ;
+    
+   
+}
+.sliderCatMain .item img{
+    width: 80%;
+    object-fit: cover;
+}
+.sliderCatMain .slick-slide {
+    margin: 0 10px; /* Adjust the margin as needed */
+    box-sizing: border-box; /* Ensure the margin is included in the slide's total width */
+  }
+  .sliderCatMain .slick-prev{
+   
+
+   margin-left: 90%;
+    top: -8%;
+   
+}
+.sliderCatMain .slick-next{
+   
+     top: -8%;
+} 
+  
+  
+
+  

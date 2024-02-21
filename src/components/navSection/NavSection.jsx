@@ -1,5 +1,5 @@
 import React from 'react'
-import '../navSection/navSection.css'
+import './navSection.css'
 import Button from '@mui/material/Button';
 import { BsGrid } from "react-icons/bs";
 import { IoIosArrowDropdown } from "react-icons/io"; 
@@ -23,7 +23,7 @@ const NavSection = () => {
         <li className='list-inline-item home'><Button><Link>Home <IoIosArrowDropdown/></Link></Button>
         </li>
         <li className='list-inline-item'><Button><Link to='about'>About</Link></Button></li>
-        <li className='list-inline-item'><Button><Link>Shop</Link></Button></li>
+        <li className='list-inline-item'><Button><Link  to='shop'>Shop</Link></Button></li>
         <li className='list-inline-item'><Button><Link>Vendors<IoIosArrowDropdown/></Link></Button>
         <div className="dropdown_menu ">
           <ul>
