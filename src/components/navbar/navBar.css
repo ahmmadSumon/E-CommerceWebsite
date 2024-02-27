@@ -73,6 +73,11 @@ height: 60px;
 .navLast ul li{
     list-style: none;
     position: relative;
+    
+}
+.navLast ul li a{
+    text-decoration: none;
+    color: #000 ;
 }
 .navLast ul li .navIcon{
     margin-right: 8px;

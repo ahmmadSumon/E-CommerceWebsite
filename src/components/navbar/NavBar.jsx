@@ -17,6 +17,8 @@ import { TbReorder } from "react-icons/tb";
 import axios from 'axios';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 import NavSection from '../navSection/NavSection';
+import { Link } from 'react-router-dom';
+
 
 
 const NavBar = () => {
@@ -95,7 +97,11 @@ const getCountry = async(url)=>{
                   </li>
                 <li  className="wishList">
                   <span><FaRegHeart  className='navIcon'/> Wishlist  <span className='badge bg-success rounded-circle'>3</span></span></li>
-                <li  className="cart"><span><MdOutlineShoppingCart  className='navIcon'/> Cart   <span className='badge bg-success rounded-circle'>2</span></span></li>
+            
+             <li    className="cart">
+             <Link to='cart' >
+              <span><MdOutlineShoppingCart  className='navIcon'/>  Cart 
+              <span className='badge bg-success rounded-circle'>2</span></span>  </Link></li>
               
                 <li  className="account">
                   <span onClick={()=>{setIsDropDownOpen(!isDropWownOpen)}}> <VscAccount  className='navIcon' /> 
